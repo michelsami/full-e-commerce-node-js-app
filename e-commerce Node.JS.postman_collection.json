@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "fb842f34-f2be-485f-aaf1-2e76eca04fc3",
+		"name": "e-commerce Node.JS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13672930"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "All categories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/category",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baselocal:3000}}/category/:id",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baselocal:3000}}/category/:id",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baselocal:3000}}/category/:id",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub-categories",
+			"item": [
+				{
+					"name": "All sub-categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baselocal:3000}}/sub-category",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create sub-category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"New sub-category name\",\r\n    \"categoryID\": \"47yf7f7ryy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/sub-category",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Another way to create sub-category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/category/64a011c47cdfed0a1e2aebfb/sub-category",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category",
+								"64a011c47cdfed0a1e2aebfb",
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All sub-categories of a specific category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baselocal:3000}}/category/64a011c47cdfed0a1e2aebfb/sub-category",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"category",
+								"64a011c47cdfed0a1e2aebfb",
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"John\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"223333d3Ql333@33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/register",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"email\":\"rrrdrrrddrddwprr@sss.com\",\r\n    \"password\": \"223333d3Ql333@33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/login",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"email\":\"rrrdrrrddrddwprr@sss.com\",\r\n    \"password\": \"223333d3Ql333@33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/delete",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RxQHRlc3QuY29tIiwibmFtZSI6IkpvaG4iLCJoYXNoZWRQYXNzd29yZCI6IiQyYiQxMCR5SUYyVEtKdjBBdkM5VGI0NVhjRGl1aGFQYzJwczZ4UVhzcGphTUVXRnF0OVVDdFgzenVyVyIsImlhdCI6MTY4OTg2NjIxNX0.WhUuCvvjuoyZm8ggWotJBkIQFPK52C9FfZxn2IAL6wk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Tina dd\",\r\n    \"email\": \"99sdsd99@sdsd.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/update",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"michel_sami@hotmail.fr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/forgetPassword",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify reset-password code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"michel_sami@hotmail.fr\",\r\n    \"code\" : \"2323\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baselocal:3000}}/auth/verifypassword",
+							"host": [
+								"{{baselocal:3000}}"
+							],
+							"path": [
+								"auth",
+								"verifypassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL-localhost3000",
+			"value": "baseURL-localhost3000"
+		},
+		{
+			"key": "{{baseURL-localhost3000}}",
+			"value": "{{baseURL-localHost}}"
+		},
+		{
+			"key": "base-local-3000",
+			"value": "baseURL-localhost3000"
+		},
+		{
+			"key": "baselocal3000",
+			"value": "https://localhost:3000"
+		},
+		{
+			"key": "localhost3000",
+			"value": "http://localhost:3000"
+		}
+	]
+}
