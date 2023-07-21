@@ -1,15 +1,15 @@
 import express from 'express'
-import {  authenticateUserWithToken, checkIfUniqueEmail, createUser, deleteUser, loginUser, storeassword, updateUser } from '../controller/user.js';
-import { createUserValidation, updateUserValidation } from '../utils/validator/user-validation.js';
+import {  authenticateUserWithToken, checkIfUniqueEmail, createUser, deleteUser, loginUser, updateUser } from '../controller/user.js';
+import { changePasswordValidation, createUserValidation, updateUserValidation } from '../utils/validator/user-validation.js';
 import { forgetPassword } from '../controller/forget-password.js';
-import { verifyPassword } from '../controller/verify-reset-password-code.js';
+import { updatePassword, verifyPassword } from '../controller/verify-reset-password-code.js';
 
 export const AuthenticationRouter = express.Router();
 
 
 
 AuthenticationRouter.route('/register')
-	.post(createUserValidation, checkIfUniqueEmail ,storeassword, createUser)
+	.post(createUserValidation, checkIfUniqueEmail , createUser)
 
 
 AuthenticationRouter.route('/login')
@@ -29,3 +29,6 @@ AuthenticationRouter.route('/forgetpassword')
 
 AuthenticationRouter.route('/verifypassword')
    .post(verifyPassword)
+
+AuthenticationRouter.route('/updatepassword')
+    .post(changePasswordValidation, updatePassword)
